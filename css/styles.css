@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  max-width: 700px;
+  margin: 0 auto;
+}
+body {
+  /* Sets the font size to 16px */
+  line-height: 1.4;
+  /* Sets the line-height to 1.4 */
+  color: black;
+  padding: 20px;
+  background-color: lightgray;
+  text-align: center;
+}
