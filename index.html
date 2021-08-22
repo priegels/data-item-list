@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <title>Pokédex App</title>
-  </head>
-  <body>
-    <div class="App">
-      <h1>Pokédex App</h1>
-       <img src="img/pokemon.jpg" alt="A picture of Pokemon" width="276" height="184"> 
-      <h3>This is going to be a great Pokédex!</h3>
-    </div>
-    <div class="pokemonList">
-    <script src="js/scripts.js"></script>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+  <title>Pokédex App</title>
+</head>
+<body>
+  <header class="page-header">
+    <img src="img/pokedex-logo.png" alt="This is the logo of this pokedex app" class="page-header__item" width="120" height="100">
+    <nav class="main-navigation page-header__item">
+      <ul role="menubar" class="navigation-list">
+        <li role="presentation">
+          <a href="#" role="menuitem" class="navigation-list__item">Home</a>
+        </li>
+        <li role="presentation">
+          <a href="https://priegels.github.io/portfolio-website/" role="menuitem" class="navigation-list__item">Developer</a>
+        </li>
+        <li role="presentation">
+          <a href="https://github.com/priegels/data-item-list" role="menuitem" class="navigation-list__item">Work</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="App">
+    <h1>Pokédex App</h1>
+     <img src="img/pokemon.jpg" alt="A picture of Pokemon" width="276" height="184">
+    <h3>This is going to be a great Pokédex!</h3>
   </div>
-  </body>
+  <div class="pokemonList">
+  <script src="js/scripts.js"></script>
+</div>
+</body>
 </html>
