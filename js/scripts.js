@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-alert('under construction');
 
-let favoriteBootcamp = 'careerfoundry'
-document.write(favoriteBootcamp)
-=======
 let pokemonList = [
   { name: 'Bulbasaur', height: 0.71, types: ['grass', 'poison']},
   { name: 'Ivysaur', height: 1, types: ['grass', 'poison']},
@@ -21,4 +16,3 @@ for (let i = 0; i < pokemonList.length; i++) {
     document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + 'm' + '; types: ' + pokemonList[i].types + ') </p>');
   }
 }
->>>>>>> Stashed changes
