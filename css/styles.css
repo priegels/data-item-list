@@ -1,19 +1,67 @@
+:root {
+  --text-color: #fff;
+  --background-color: #BBBBF1;
+  --navigation-list__item-color: #7964A6;
+  --navigation-font-size: 26px;
+}
+
 * {
   box-sizing: border-box;
 }
 
-.app {
-  max-width: 700px;
-  margin: 0 auto;
+.page-header {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  background-color: #F1F1BB;
+  align-items: center;
+  border-style: groove;
 }
+
+.page-header__item {
+  flex: 0 1 auto;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.navigation-list__item {
+  font-size: var(--navigation-font-size);
+  font-weight: bold;
+  color: var(--navigation-list__item-color);
+}
+
 body {
+  font-family: 'Inconsolata', sans-serif;
+  /* font-styling not applied yet  font-weight: var(--primary-font-weight);
+  font-size: var(--primary-font-size); */
   /* Sets the font size to 16px */
   line-height: 1.4;
   /* Sets the line-height to 1.4 */
   color: black;
   padding: 20px;
-  background-color: lightgray;
+  background-color: var(--background-color);
   text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.app {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* created a div for the script to add a class to it and make the pokemonList appear different from the rest of the body
