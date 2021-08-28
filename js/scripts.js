@@ -1,4 +1,4 @@
-//attempting to wrap my pokemonList in an IIFE
+//IIFE containing Repository of Pokemon with height, types and eventually moves
 let pokemonRepository = (function () {
   let pokemonList = [
     { name: 'Bulbasaur', height: 0.71, types: ['grass', 'poison']},
@@ -6,7 +6,7 @@ let pokemonRepository = (function () {
     { name: 'Venusaur', height: 2, types: ['grass', 'poison']},
   ];
 
-//does this make sense???
+//function that only allows the addition of new pokemon if the pokemon is an object
   function add(pokemon) {
     if (typeof(pokemon) === object) {
     pokemonList.push(pokemon);
@@ -17,19 +17,31 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+  function addListItem(pokemon) {
+    let pokemonUList = document.querySelector('.pokemon-list');
+    let pokemonListItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-pokemon');
+
+    pokemonListItem.appendChild(button);
+    pokemonUList.appendChild(pokemonListItem);
+  }
+
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
-//loop that lists every pokemon with their respective height + types
-//<p> is used to create a list as opposed to just having everything in one line of text
 
-// new forEach function() for task 1.5 with called IIFE function
+console.log(pokemonRepository.getAll());
+//Improved upon function that will list every Pokemon in the Repository
+
 pokemonRepository.getAll().forEach(function(pokemon) {
-  document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + 'm' + '; types: ' + pokemon.types + ') </p>');
+  pokemonRepository.addListItem(pokemon);
 });
 
 // does this make sense??
-alert(Object.keys(pokemonRepository.getAll()));
+console.log(Object.keys(pokemonRepository.getAll()));
