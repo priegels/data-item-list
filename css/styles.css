@@ -1,8 +1,9 @@
 :root {
-  --text-color: #fff;
+  --text-color: #000;
   --background-color: #BBBBF1;
   --navigation-list__item-color: #7964A6;
   --navigation-font-size: 26px;
+  --button-pokemon-color: #BBF1D6;
 }
 
 * {
@@ -69,4 +70,18 @@ this will probably be changed later on */
 .pokemonList {
   color: green;
   font-size: 16px;
+}
+
+.pokemon-list {
+    list-style-type: none;
+    display: contents;
+}
+
+.button-pokemon {
+  background-color: var(--button-pokemon-color);
+  color: var(--text-color);
+  font-weight: 300;
+  padding: 10px;
+  width: 150px;
+
 }
