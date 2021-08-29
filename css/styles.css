@@ -1,6 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: none yet,
+* Autoprefixer: none yet
+* Browsers: not tested yet
+*/
+
+/*
+Fonts:
+Inconsolata
+Colors:
+Background (blueish): #BBBBF1
+Nav Bar (yellowish): #F1F1BB
+White: #fff
+Black: #000;
+*/
+
 :root {
   --text-color: #000;
   --background-color: #BBBBF1;
+  --nav-bar-color: #F1F1BB;
   --navigation-list__item-color: #7964A6;
   --navigation-font-size: 26px;
   --button-pokemon-color: #BBF1D6;
@@ -12,9 +30,9 @@
 
 .page-header {
   display: flex;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
-  background-color: #F1F1BB;
+  background-color: var(--nav-bar-color);
   align-items: center;
   border-style: groove;
 }
