@@ -1,40 +1,38 @@
-<<<<<<< Updated upstream
-//IIFE containing Repository of Pokemon with height, types and eventually moves
-=======
 //Loads pokemonList from an external API
->>>>>>> Stashed changes
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-//function that only allows the addition of new pokemon if the pokemon is an object
+//Function that only allows the addition of new Pokémon if the Pokémon is an object
   function add(pokemon) {
-    if (typeof(pokemon) === object) {
+    if (typeof(pokemon) === 'object' && 'name' in pokemon) {
     pokemonList.push(pokemon);
+  } else {
+      console.log('error')
   }
 }
 
+//Returns list of Pokémon
   function getAll() {
     return pokemonList;
   }
 
+//Lists Pokémon in repository as buttons
   function addListItem(pokemon) {
     let pokemonUList = document.querySelector('.pokemon-list');
     let pokemonListItem = document.createElement('li');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('button-pokemon');
+//Event Function to happen on click on button
+    button.addEventListener('click', function(event) {
+      showDetails(pokemon);
+    })
 
     pokemonListItem.appendChild(button);
     pokemonUList.appendChild(pokemonListItem);
   }
 
-<<<<<<< Updated upstream
-  return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem
-=======
 //Fetches list from API
 
       function loadList() {
@@ -65,7 +63,6 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     showDetails: showDetails,
     loadList: loadList
->>>>>>> Stashed changes
   };
 })();
 
