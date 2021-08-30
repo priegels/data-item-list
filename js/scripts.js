@@ -53,8 +53,25 @@ let pokemonRepository = (function () {
 
 //Shows details of selected Pokémon on click
   function showDetails(pokemon) {
-    console.log(pokemon);
+    loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
   }
+
+//Loads details of selected Pokémon after click
+    function loadDetails(item) {
+      let url = item.detailsUrl;
+      return fetch(url).then(function (response) {
+        return response.json();
+      }).then(function (details) {
+        // Now we add the details to the item
+        item.imageUrl = details.sprites.front_default;
+        item.height = details.height;
+        item.types = details.types;
+      }).catch(function (e) {
+        console.error(e);
+      });
+    }
 
 //Function returns
   return {
@@ -62,7 +79,8 @@ let pokemonRepository = (function () {
     getAll: getAll,
     addListItem: addListItem,
     showDetails: showDetails,
-    loadList: loadList
+    loadList: loadList,
+    loadDetails: loadDetails,
   };
 })();
 
