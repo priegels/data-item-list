@@ -1,10 +1,11 @@
+<<<<<<< Updated upstream
 //IIFE containing Repository of Pokemon with height, types and eventually moves
+=======
+//Loads pokemonList from an external API
+>>>>>>> Stashed changes
 let pokemonRepository = (function () {
-  let pokemonList = [
-    { name: 'Bulbasaur', height: 0.71, types: ['grass', 'poison']},
-    { name: 'Ivysaur', height: 1, types: ['grass', 'poison']},
-    { name: 'Venusaur', height: 2, types: ['grass', 'poison']},
-  ];
+  let pokemonList = [];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 //function that only allows the addition of new pokemon if the pokemon is an object
   function add(pokemon) {
@@ -28,20 +29,50 @@ let pokemonRepository = (function () {
     pokemonUList.appendChild(pokemonListItem);
   }
 
+<<<<<<< Updated upstream
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem
+=======
+//Fetches list from API
+
+      function loadList() {
+      return fetch(apiUrl).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url
+          };
+          add(pokemon);
+        });
+      }).catch(function (e) {
+        console.error(e);
+      })
+    }
+
+//Shows details of selected Pokémon on click
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
+//Function returns
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails,
+    loadList: loadList
+>>>>>>> Stashed changes
   };
 })();
 
 
-console.log(pokemonRepository.getAll());
-//Improved upon function that will list every Pokemon in the Repository
-
-pokemonRepository.getAll().forEach(function(pokemon) {
-  pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function() {
+  // Now the data is loaded!
+  pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+  });
 });
-
-// does this make sense??
-console.log(Object.keys(pokemonRepository.getAll()));
