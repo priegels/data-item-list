@@ -43,6 +43,15 @@
   color: var(--navigation-list__item-color);
 }
 
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-style: groove;
+  margin-top: 10px;
+}
+
 body {
   font-family: 'Inconsolata', sans-serif;
   /* font-styling not applied yet  font-weight: var(--primary-font-weight);
