@@ -1,28 +1,33 @@
-//IIFE containing Repository of Pokemon with height, types and eventually moves
+//Loads pokemonList from an external API
 let pokemonRepository = (function () {
-  let pokemonList = [
-    { name: 'Bulbasaur', height: 0.71, types: ['grass', 'poison']},
-    { name: 'Ivysaur', height: 1, types: ['grass', 'poison']},
-    { name: 'Venusaur', height: 2, types: ['grass', 'poison']},
-  ];
+  let pokemonList = [];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-//function that only allows the addition of new pokemon if the pokemon is an object
+//Function that only allows the addition of new Pokémon if the Pokémon is an object
   function add(pokemon) {
-    if (typeof(pokemon) === object) {
+    if (typeof(pokemon) === 'object' && 'name' in pokemon) {
     pokemonList.push(pokemon);
+  } else {
+      console.log('error')
   }
 }
 
+//Returns list of Pokémon
   function getAll() {
     return pokemonList;
   }
 
+//Lists Pokémon in repository as buttons
   function addListItem(pokemon) {
     let pokemonUList = document.querySelector('.pokemon-list');
     let pokemonListItem = document.createElement('li');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('button-pokemon');
+//Event Function to happen on click on button
+    button.addEventListener('click', function(event) {
+      showDetails(pokemon);
+    })
 
     pokemonListItem.appendChild(button);
     pokemonUList.appendChild(pokemonListItem);
@@ -145,17 +150,12 @@ let pokemonRepository = (function () {
     loadList: loadList,
     loadDetails: loadDetails,
     showModal: showModal,
-
   };
 })();
 
-
-console.log(pokemonRepository.getAll());
-//Improved upon function that will list every Pokemon in the Repository
-
-pokemonRepository.getAll().forEach(function(pokemon) {
-  pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function() {
+  // Now the data is loaded!
+  pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+  });
 });
-
-// does this make sense??
-console.log(Object.keys(pokemonRepository.getAll()));
