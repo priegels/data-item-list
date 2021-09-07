@@ -19,11 +19,12 @@ let pokemonRepository = (function () {
 
 //Lists Pokémon in repository as buttons
   function addListItem(pokemon) {
-    let pokemonUList = document.querySelector('.pokemon-list');
+    let pokemonUList = document.querySelector('.list-group');
     let pokemonListItem = document.createElement('li');
+    pokemonListItem.classList.add('group-list-item');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add('button-pokemon');
+    button.classList.add('btn', 'btn-primary', 'btn-lg', 'btn-block');
 //Event Function to happen on click on button
     button.addEventListener('click', function(event) {
       showDetails(pokemon);
