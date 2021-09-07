@@ -67,18 +67,28 @@ this will probably be changed later on */
   font-size: 16px;
 }
 
-.pokemon-list {
+.list-group {
     list-style-type: none;
     display: contents;
 }
 
-.button-pokemon {
+.btn {
   background-color: var(--button-pokemon-color);
   color: var(--text-color);
   font-weight: 300;
   padding: 10px;
-  width: 150px;
+}
 
+.btn:hover {
+  background-color: #9de8c2;
+}
+
+.btn:focus {
+  background-color: #74dba7;
+}
+
+.btn:active {
+  background-color: #74dba7 !important;
 }
 
 #modal-container {
