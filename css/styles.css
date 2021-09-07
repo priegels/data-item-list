@@ -6,10 +6,6 @@
   --button-pokemon-color: #BBF1D6;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .page-header {
   display: flex;
   padding: 20px;
