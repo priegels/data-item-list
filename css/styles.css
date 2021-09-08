@@ -24,19 +24,8 @@
   text-align: right;
 }
 
-.navigation-list {
-  list-style-type: none;
-}
-
-.navigation-list li {
-  display: inline-block;
-  margin-left: 15px;
-}
-
-.navigation-list__item {
-  font-size: var(--navigation-font-size);
-  font-weight: bold;
-  color: var(--navigation-list__item-color);
+#navbarSupportedContent {
+  justify-content: flex-end;
 }
 
 body {
@@ -95,4 +84,33 @@ this will probably be changed later on */
   text-transform: capitalize;
   align-items: stretch;
   flex-direction: column;
+}
+
+.modal p {
+  text-align: left;
+  margin-bottom: 9px;
+}
+
+.pokemon-id {
+  margin: 0;
+}
+
+.modal-header {
+  display: inline-block;
+}
+
+.modal-header .close {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-body img {
+  padding: 20px;
+  margin: 15px;
 }
