@@ -68,7 +68,8 @@ let pokemonRepository = (function () {
         return response.json();
       }).then(function (details) {
         // Now we add the details to the item
-        item.imageUrl = details.sprites.front_default;
+        item.id = details.id;
+        item.imageUrl = details.sprites.other.dream_world.front_default;
         item.height = details.height;
         item.weight = details.weight;
         item.types = details.types;
@@ -84,28 +85,41 @@ let pokemonRepository = (function () {
       let modalBody = $('.modal-body');
       let modalTitle = $('.modal-title');
       let modalHeader = $('.modal-header');
+      let modalBodyP = $('.modal-body-p');
 
       modalTitle.empty();
       modalBody.empty();
 
+      let idElement = $('<p>#' + pokemon.id + '</p>');
+      idElement.addClass('pokemon-id');
       let nameElement = $('<h1>' + pokemon.name + '</h1>');
 
       let imageElement = $('<img class = "modal-img" style="width:50%">');
       imageElement.attr('src', pokemon.imageUrl);
 
-      let heightElement = $('<p>' + 'height : ' + pokemon.height / 10 + ' m' + '</p>');
-      let weightElement = $('<p>' + 'weight : ' + pokemon.weight / 10 + ' kg' + '</p>');
-      let typesElement = $('<p>' + 'types  : ' + pokemon.types.map(pokemon => ' ' + pokemon.type.name) + '</p>');
-      let abilitiesElement = $('<p>' + 'abilites : ' + pokemon.abilities.map(pokemon => ' ' + pokemon.ability.name) + '</p>');
+      let heightElement = $('<p>' + '<b>height: </b>' + pokemon.height / 10 + ' m' + '</p>');
+      let weightElement = $('<p>' + '<b>weight: </b>' + pokemon.weight / 10 + ' kg' + '</p>');
+      let typesElement = $('<p>' + '<b>types: </b>' + pokemon.types.map(pokemon => ' ' + pokemon.type.name) + '</p>');
+      let abilitiesElement = $('<p>' + '<b>abilities: </b>' + pokemon.abilities.map(pokemon => ' ' + pokemon.ability.name) + '</p>');
 
+      modalTitle.append(idElement);
       modalTitle.append(nameElement);
       modalBody.append(imageElement);
-      modalBody.append(heightElement);
-      modalBody.append(weightElement);
-      modalBody.append(typesElement);
-      modalBody.append(abilitiesElement);
+      modalBody.append(modalBodyP);
+      modalBodyP.append(heightElement);
+      modalBodyP.append(weightElement);
+      modalBodyP.append(typesElement);
+      modalBodyP.append(abilitiesElement);
     }
 
+    $(document).ready(function() {
+        $('#search-input').on('keyup', function() {
+          let value = $(this).val().toLowerCase();
+          $('.list-group *').filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
 
 //Function returns
   return {
