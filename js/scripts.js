@@ -89,6 +89,7 @@ let pokemonRepository = (function () {
 
       modalTitle.empty();
       modalBody.empty();
+      modalBodyP.empty();
 
       let idElement = $('<p>#' + pokemon.id + '</p>');
       idElement.addClass('pokemon-id');
