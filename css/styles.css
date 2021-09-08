@@ -1,27 +1,27 @@
 :root {
   --text-color: #000;
-  --background-color: #BBBBF1;
-  --navigation-list__item-color: #7964A6;
+  --background-color: #d00013;
+  --navbar-color: #f3fff6;
+  --border-color: #b90012;
   --navigation-font-size: 26px;
-  --button-pokemon-color: #BBF1D6;
+  --button-pokemon-color: #13da76;
+  --modal-color: #f1f1f1;
+  --modal-border-color: #8e000d;
 }
 
-.page-header {
-  display: flex;
-  padding: 20px;
-  width: 100%;
-  background-color: #F1F1BB;
-  align-items: center;
-  border-style: groove;
+a.navbar-brand {
+  text-align: start;
 }
 
-.page-header__item {
-  flex: 0 1 auto;
+.form-control {
+  border: 1px solid #808080;
+  width: 200px !important;
 }
 
-.page-header__item:last-child {
-  flex-grow: 1;
-  text-align: right;
+.bg-light {
+  background-color: var(--navbar-color) !important;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
 }
 
 #navbarSupportedContent {
@@ -29,7 +29,7 @@
 }
 
 body {
-  font-family: 'Inconsolata', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   /* font-styling not applied yet  font-weight: var(--primary-font-weight);
   font-size: var(--primary-font-size); */
   line-height: 1.4;
@@ -40,8 +40,16 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 40px;
+.App h1 {
+  font-size: 70px;
+  text-shadow: 7px 7px 7px #000;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.App h3 {
+  -webkit-text-stroke-width: thin;
+  color: #fff;
 }
 
 .app {
@@ -51,21 +59,20 @@ h1 {
 
 /* created a div for the script to add a class to it and make the pokemonList appear different from the rest of the body
 this will probably be changed later on */
-.pokemonList {
-  color: green;
-  font-size: 16px;
-}
 
 .list-group {
-    list-style-type: none;
-    display: contents;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .btn {
   background-color: var(--button-pokemon-color);
   color: var(--text-color);
-  font-weight: 300;
+  font-weight: 400;
   padding: 10px;
+  text-transform: capitalize;
+  border-color: inherit;
 }
 
 .btn:hover {
@@ -80,10 +87,15 @@ this will probably be changed later on */
   background-color: #74dba7 !important;
 }
 
+.modal-header, .modal-body {
+  background-color: var(--modal-color);
+}
+
 .modal-header {
-  text-transform: capitalize;
+  text-transform: uppercase;
   align-items: stretch;
   flex-direction: column;
+  border-bottom: 2px dotted var(--modal-border-color);
 }
 
 .modal p {
