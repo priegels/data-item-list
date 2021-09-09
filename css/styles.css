@@ -13,6 +13,7 @@ a.navbar-brand {
   text-align: start;
 }
 
+/* search bar in header */
 .form-control {
   border: 1px solid #808080;
   width: 200px !important;
@@ -40,6 +41,7 @@ body {
   text-align: center;
 }
 
+/* only applies to text on page, not the modal h1 */
 .App h1 {
   font-size: 70px;
   text-shadow: 7px 7px 7px #000;
@@ -135,11 +137,13 @@ body {
   margin: 15px;
 }
 
+/* gives a bit more space at the bottom of the page */
 #emptydiv {
   padding: 20px;
   margin: 0;
 }
 
+/* adjusted display for smaller screens */
 @media all and (max-width: 400px){
   .list-group {
     grid-template-columns: 1fr;

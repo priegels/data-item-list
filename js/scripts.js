@@ -79,6 +79,7 @@ let pokemonRepository = (function () {
       });
     }
 
+//shows modal, jQuery used here
     let modalContainer = document.querySelector('#pokemonModal');
 
     function showModal(pokemon) {
@@ -113,6 +114,7 @@ let pokemonRepository = (function () {
       modalBodyP.append(abilitiesElement);
     }
 
+//search function
     $(document).ready(function() {
         $('#search-input').on('keyup', function() {
           let value = $(this).val().toLowerCase();
@@ -141,10 +143,10 @@ pokemonRepository.loadList().then(function() {
   });
 });
 
-//Get the button:
+//back to top button
 mybutton = document.getElementById("btn-back-to-top");
 
-// When the user scrolls down 200px from the top of the document, show the button
+// When the user scrolls down 300px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
