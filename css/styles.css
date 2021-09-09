@@ -1,53 +1,37 @@
 :root {
   --text-color: #000;
-  --background-color: #BBBBF1;
-  --navigation-list__item-color: #7964A6;
+  --background-color: #d00013;
+  --navbar-color: #f3fff6;
+  --border-color: #b90012;
   --navigation-font-size: 26px;
-  --button-pokemon-color: #BBF1D6;
+  --button-pokemon-color: #13da76;
+  --modal-color: #f1f1f1;
+  --modal-border-color: #8e000d;
 }
 
-* {
-  box-sizing: border-box;
+a.navbar-brand {
+  text-align: start;
 }
 
-.page-header {
-  display: flex;
-  padding: 20px;
-  width: 100%;
-  background-color: #F1F1BB;
-  align-items: center;
-  border-style: groove;
+.form-control {
+  border: 1px solid #808080;
+  width: 200px !important;
 }
 
-.page-header__item {
-  flex: 0 1 auto;
+.bg-light {
+  background-color: var(--navbar-color) !important;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
 }
 
-.page-header__item:last-child {
-  flex-grow: 1;
-  text-align: right;
-}
-
-.navigation-list {
-  list-style-type: none;
-}
-
-.navigation-list li {
-  display: inline-block;
-  margin-left: 15px;
-}
-
-.navigation-list__item {
-  font-size: var(--navigation-font-size);
-  font-weight: bold;
-  color: var(--navigation-list__item-color);
+#navbarSupportedContent {
+  justify-content: flex-end;
 }
 
 body {
-  font-family: 'Inconsolata', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   /* font-styling not applied yet  font-weight: var(--primary-font-weight);
   font-size: var(--primary-font-size); */
-  /* Sets the font size to 16px */
   line-height: 1.4;
   /* Sets the line-height to 1.4 */
   color: black;
@@ -56,8 +40,16 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 40px;
+.App h1 {
+  font-size: 70px;
+  text-shadow: 7px 7px 7px #000;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.App h3 {
+  -webkit-text-stroke-width: thin;
+  color: #fff;
 }
 
 .app {
@@ -65,23 +57,94 @@ h1 {
   margin: 0 auto;
 }
 
-/* created a div for the script to add a class to it and make the pokemonList appear different from the rest of the body
-this will probably be changed later on */
-.pokemonList {
-  color: green;
-  font-size: 16px;
+.list-group {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
-.pokemon-list {
-    list-style-type: none;
-    display: contents;
-}
-
-.button-pokemon {
+.btn {
   background-color: var(--button-pokemon-color);
   color: var(--text-color);
-  font-weight: 300;
+  font-weight: 400;
   padding: 10px;
-  width: 150px;
+  text-transform: capitalize;
+  border-color: inherit;
+}
 
+.btn:hover {
+  background-color: #9de8c2;
+}
+
+.btn:focus {
+  background-color: #74dba7;
+}
+
+.btn:active {
+  background-color: #74dba7 !important;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 21px;
+  right: 18px;
+  display: none;
+  padding: 0px;
+  border: none;
+}
+
+.modal-header, .modal-body {
+  background-color: var(--modal-color);
+}
+
+.modal-header {
+  text-transform: uppercase;
+  align-items: stretch;
+  flex-direction: column;
+  border-bottom: 2px dotted var(--modal-border-color);
+}
+
+.modal p {
+  text-align: left;
+  margin-bottom: 9px;
+}
+
+.pokemon-id {
+  margin: 0;
+}
+
+.modal-header {
+  display: inline-block;
+}
+
+.modal-header .close {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-body img {
+  padding: 20px;
+  margin: 15px;
+}
+
+
+@media all and (max-width: 400px){
+  .list-group {
+    grid-template-columns: 1fr;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  #btn-back-to-top {
+    bottom: 21px;
+    right: 9px;
+  }
 }

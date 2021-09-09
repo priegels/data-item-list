@@ -4,36 +4,62 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="img/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/styles.css">
   <title>Pokédex App</title>
 </head>
 <body>
-  <header class="page-header">
-    <img src="img/pokedex-logo.png" alt="This is the logo of this pokedex app" class="page-header__item" width="120" height="100">
-    <nav class="main-navigation page-header__item">
-      <ul role="menubar" class="navigation-list">
-        <li role="presentation">
-          <a href="#" role="menuitem" class="navigation-list__item">Home</a>
-        </li>
-        <li role="presentation">
-          <a href="https://priegels.github.io/portfolio-website/" role="menuitem" class="navigation-list__item">Developer</a>
-        </li>
-        <li role="presentation">
-          <a href="https://github.com/priegels/data-item-list" role="menuitem" class="navigation-list__item">Work</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="index.html">
+      <img src="img/pokedex-logo.png" alt="pokedex logo" width="89" height="72"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline">
+        <input id = "search-input" class="form-control" type="search" value="" placeholder="Search Pokémon" aria-label="Search">
+      </form>
+    </div>
+  </nav>
   <div class="App">
     <h1>Pokédex App</h1>
-     <img src="img/pokemon.jpg" alt="A picture of Pokemon" width="276" height="184">
-    <h3>This is going to be a great Pokédex!</h3>
+    <h3>Select your Pokémon!</h3>
   </div>
   <div class="div-pokemonList">
-    <ul class="pokemon-list"></ul>
-  <script src="js/scripts.js"></script>
+    <ul class="list-group"></ul>
 </div>
+<div class="modal fade" id="pokemonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="pokemonModalLabel"></h5>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-p">
+        </div>
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+    <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="32" height="32" viewBox="0 0 24 24" stroke-width="2.5" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <line x1="12" y1="5" x2="12" y2="19" />
+    <line x1="18" y1="11" x2="12" y2="5" />
+    <line x1="6" y1="11" x2="12" y2="5" />
+  </svg></button>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/promise-polyfill.js"></script>
+<script src="js/fetch.umd.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
