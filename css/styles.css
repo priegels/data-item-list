@@ -57,13 +57,12 @@ body {
   margin: 0 auto;
 }
 
-/* created a div for the script to add a class to it and make the pokemonList appear different from the rest of the body
-this will probably be changed later on */
-
 .list-group {
   list-style-type: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .btn {
@@ -85,6 +84,15 @@ this will probably be changed later on */
 
 .btn:active {
   background-color: #74dba7 !important;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 21px;
+  right: 18px;
+  display: none;
+  padding: 0px;
+  border: none;
 }
 
 .modal-header, .modal-body {
@@ -125,4 +133,18 @@ this will probably be changed later on */
 .modal-body img {
   padding: 20px;
   margin: 15px;
+}
+
+
+@media all and (max-width: 400px){
+  .list-group {
+    grid-template-columns: 1fr;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  #btn-back-to-top {
+    bottom: 21px;
+    right: 9px;
+  }
 }
