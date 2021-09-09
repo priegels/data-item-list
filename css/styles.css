@@ -135,6 +135,10 @@ body {
   margin: 15px;
 }
 
+#emptydiv {
+  padding: 20px;
+  margin: 0;
+}
 
 @media all and (max-width: 400px){
   .list-group {
@@ -146,5 +150,9 @@ body {
   #btn-back-to-top {
     bottom: 21px;
     right: 9px;
+  }
+
+  #emptydiv {
+    padding: 10px;
   }
 }
