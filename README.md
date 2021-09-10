@@ -20,3 +20,8 @@ The web application is created using HTML, CSS and JavaScript. Data is loaded fr
 - The app *must* not throw any errors when being used
 - The app *will* be deployed to a publicly accessible platform like GitHub Pages
 - The app *must* work in Chrome, Firefox, Safari, Edge, and Internet Explorer 11
+
+## List of Technologies used
+- HTML, CSS, JS
+- jQuery (esp. jQuery.ajax)
+- Bootstrap as framework
