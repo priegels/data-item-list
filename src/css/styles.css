@@ -31,9 +31,11 @@ a.navbar-brand {
 
 body {
   font-family: 'Josefin Sans', sans-serif;
+
   /* font-styling not applied yet  font-weight: var(--primary-font-weight);
   font-size: var(--primary-font-size); */
   line-height: 1.4;
+
   /* Sets the line-height to 1.4 */
   color: black;
   padding: 20px;
@@ -93,11 +95,12 @@ body {
   bottom: 21px;
   right: 18px;
   display: none;
-  padding: 0px;
+  padding: 0;
   border: none;
 }
 
-.modal-header, .modal-body {
+.modal-header,
+.modal-body {
   background-color: var(--modal-color);
 }
 
@@ -144,7 +147,7 @@ body {
 }
 
 /* adjusted display for smaller screens */
-@media all and (max-width: 400px){
+@media all and (max-width: 400px) {
   .list-group {
     grid-template-columns: 1fr;
     margin-right: 30px;
@@ -160,3 +163,22 @@ body {
     padding: 10px;
   }
 }
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
